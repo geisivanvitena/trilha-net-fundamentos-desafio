@@ -6,7 +6,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
+Console.WriteLine("*** Seja bem vindo ao sistema de estacionamento! ***\n" +
                   "Digite o preço inicial:");
 precoInicial = Convert.ToDecimal(Console.ReadLine());
 
@@ -24,10 +24,11 @@ while (exibirMenu)
 {
     Console.Clear();
     Console.WriteLine("Digite a sua opção:");
-    Console.WriteLine("1 - Cadastrar veículo");
-    Console.WriteLine("2 - Remover veículo");
-    Console.WriteLine("3 - Listar veículos");
-    Console.WriteLine("4 - Encerrar");
+    Console.WriteLine("[1] - [ Cadastrar veículo ]");
+    Console.WriteLine("[2] - [ Listar veículos ]");
+    Console.WriteLine("[3] - [ Atualizar veículo ]");
+    Console.WriteLine("[4] - [ Remover veículo ]");
+    Console.WriteLine("[5] - [ Encerrar ]");
 
     switch (Console.ReadLine())
     {
@@ -36,14 +37,18 @@ while (exibirMenu)
             break;
 
         case "2":
-            es.RemoverVeiculo();
-            break;
-
-        case "3":
             es.ListarVeiculos();
             break;
 
+        case "3":
+            es.AtualizarVeiculo();
+            break;
+            
         case "4":
+            es.RemoverVeiculo();
+            break;
+
+        case "5":
             exibirMenu = false;
             break;
 
